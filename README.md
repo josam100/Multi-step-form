@@ -22,6 +22,6 @@ This project implements a responsive, multi-step form designed for collecting us
 To use this project, simply clone the repository and open `index.html` in your browser:
 
 ```bash
-git clone https://github.com/yourusername/multi-step-form.git
+git clone https://github.com/josam100/Multi-step-form.git
 cd multi-step-form
 open index.html
