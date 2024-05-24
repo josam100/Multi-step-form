@@ -1,0 +1,456 @@
+/* =========== FONTS =========== */
+
+@font-face {
+  font-family: Ubuntu-Bold;
+  src: url(../assets/fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+  font-family: Ubuntu-Medium;
+  src: url(../assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+  font-family: Ubuntu-Regular;
+  src: url(../assets/fonts/Ubuntu-Regular.ttf);
+}
+
+/* =========== BASICS =========== */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef5ff;
+  min-height: 100vh;
+  font-family: Ubuntu-Regular;
+  padding: 0px 10px;
+}
+
+.container {
+  width: 900px;
+  min-height: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.02);
+  display: flex;
+  padding: 10px;
+}
+
+/* =========== LEFT SIDE (SIDEBAR) =========== */
+
+.sidebar {
+  flex: 1.2;
+  border-radius: 12px;
+  background-image: url("../assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 30px;
+  color: #fff;
+}
+
+.sidebar .box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.sidebar .box .num-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: none;
+  border: 2px solid #bee1ff;
+  color: #fff;
+  font-weight: 800;
+  padding-bottom: 2px;
+}
+
+.sidebar .box .active {
+  background-color: #bee1ff;
+  color: #222;
+}
+
+.sidebar .box .info h1 {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.sidebar .box .info h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: Ubuntu-Bold;
+  letter-spacing: 1px;
+}
+
+/* =========== RIGHT-SIDE(FORMS) =========== */
+
+.right-side {
+  flex: 3;
+  padding: 40px 80px;
+  position: relative;
+}
+
+.right-side .title {
+  margin-bottom: 40px;
+}
+
+.right-side .title h1 {
+  font-family: Ubuntu-Bold;
+  margin-bottom: 5px;
+}
+
+p {
+  font-family: Ubuntu-Regular;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* =========== FORM-ONE =========== */
+
+.right-side #form-one label {
+  font-family: Ubuntu-Bold;
+  color: #444;
+  text-transform: capitalize;
+  display: block;
+  font-size: 16px;
+}
+
+.right-side #form-one input {
+  margin-bottom: 30px;
+  margin-top: 5px;
+  padding: 0px 10px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.right-side #form-one input:focus {
+  border: 1px solid hsl(243, 100%, 62%);
+  outline: none;
+}
+
+/* =========== FORM-TWO =========== */
+
+.form-two-box .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.form-two-box .cards .card {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.form-two-box .cards .card:hover,
+.form-two-box .cards .active {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: #f8f9fe;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-two-box .cards .card img {
+  margin-bottom: 30px;
+}
+
+.form-two-box .cards .card h3 {
+  text-transform: capitalize;
+  margin-bottom: 2px;
+  font-family: Ubuntu-Bold;
+  font-size: large;
+}
+
+.switch-box {
+  margin-top: 30px;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: rgba(0, 0, 0, 0.03);
+  color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.switch-box .toggle-box {
+  width: 40px;
+  height: 22px;
+  padding: 2px;
+  border-radius: 100px;
+  background-color: #222;
+}
+
+.switch-box * {
+  cursor: pointer;
+}
+
+.switch-box .toggle-box .circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.switch-box .active {
+  color: #222;
+}
+
+.button-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 90%;
+  width: calc(100% - 160px);
+}
+
+.button-box button {
+  border: none;
+  outline: none;
+  background-color: hsl(213, 96%, 18%);
+  color: #fff;
+  font-family: Ubuntu-Bold;
+  font-size: 16px;
+  padding: 10px 20px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-box button:hover {
+  opacity: 0.9;
+}
+
+.button-box span {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.form-box-container {
+  height: 100%;
+}
+
+/* =========== FORM-THREE =========== */
+
+.form-three-box .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-three-box .cards .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-three-box .cards .card:hover,
+.form-three-box .cards .active {
+  background-color: #f8f9fe;
+  border-color: hsl(243, 100%, 62%);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-three-box .cards .card input {
+  transform: scale(1.4);
+}
+
+.form-three-box .cards .card input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: hsl(243, 100%, 62%);
+}
+
+.form-three-box .cards .card .info {
+  flex: 2;
+  padding: 0px 20px;
+}
+
+.form-three-box .cards .card .info h3 {
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+/* =========== FORM-FOUR =========== */
+
+.form-four-box .card:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #f8f9fe;
+}
+
+.form-four-box .card:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #f8f9fe;
+  padding-bottom: 15px;
+}
+
+.form-four-box .card,
+.form-four-box .card-in {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  border-radius: auto;
+  width: 100%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.form-four-box .card {
+  padding: 15px 20px 0px;
+  border: none;
+}
+
+.form-four-box .card a {
+  text-decoration: underline;
+  color: blue;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.form-four-box .card .price {
+  font-weight: 600;
+}
+
+.form-four-box .card .price-info {
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.form-four-box .card .p-infos p {
+  margin: 10px 0px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.form-four-box .card .price-info h3 {
+  margin: 10px 0px;
+}
+
+.form-four-box .total {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.form-four-box .total h3 {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+}
+
+.form-four-box .total h2 {
+  font-size: 18px;
+  color: hsl(243, 100%, 62%);
+}
+
+/* =========== THANK-BOX =========== */
+
+.thank-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  letter-spacing: 1px;
+  padding: 0px 20px;
+}
+
+.thank-box h2 {
+  font-family: Ubuntu-Bold;
+}
+
+/* =========== @MEDIA QUIRES =========== */
+
+@media (max-width: 750px) {
+  body {
+    min-height: 100vh;
+    padding: 0px;
+    align-items: flex-start;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    background: none;
+    width: 100%;
+    border-radius: 0px;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-radius: 0px 0px 0px 0px;
+    background-position: bottom;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #f00; */
+    padding: 40px 0px 130px;
+  }
+
+  .sidebar .box {
+    margin: 0;
+  }
+
+  .sidebar .box .info {
+    display: none;
+  }
+
+  .right-side {
+    margin: -100px auto 0px;
+    background-color: #fff;
+    width: calc(100% - 10vw);
+    border-radius: 15px;
+    min-height: 600px;
+    padding: 30px;
+    padding-bottom: 0px;
+  }
+
+  .button-box {
+    bottom: 30px;
+    width: calc(100% - 60px);
+  }
+
+  .thank-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+}
+
+@media (max-width: 486px) {
+  .right-side {
+    padding-bottom: 150px;
+  }
+}
