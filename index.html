@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="sidebar">
+      <aside class="sidebar">
         <div class="box" onclick="showBoxNum('1')">
           <div class="num-box active">1</div>
           <div class="info">
@@ -37,190 +37,188 @@
             <h2>summary</h2>
           </div>
         </div>
-      </div>
+      </aside>
 
-      <main>
-        <div id="form-boxs-container" class="right-side">
-          <!-- ===== Step-One -->
-          <div class="form-box-container">
-            <div class="title" id="title-one">
-              <h1>Personal info</h1>
-              <p>Please provide your name, email address, and phone number.</p>
+      <main id="form-boxs-container" class="right-side">
+        <!-- ===== Step-One -->
+        <div class="form-box-container">
+          <div class="title" id="title-one">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
+
+          <form action="post" id="form-one">
+            <label for="name">name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="e.g. Stephen King"
+              required
+            />
+            <label for="email">email address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="e.g. stephenking@lorem.com"
+              required
+            />
+            <label for="number">phone number</label>
+            <input
+              type="number"
+              name="number"
+              id="number"
+              placeholder="e.g. +1 234 567 890"
+              required
+            />
+          </form>
+
+          <div class="button-box" style="justify-content: flex-end">
+            <button class="button" type="submit" onclick="showNextPage()">
+              Next Step
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== Step-Two -->
+        <div class="form-box-container" style="display: none">
+          <div class="title" id="title-two">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+
+          <div class="form-two-box" id="form-two">
+            <div class="cards">
+              <div class="card active">
+                <img src="assets/images/icon-arcade.svg" alt="" />
+                <h3>Arcade</h3>
+                <p>$9/mo</p>
+              </div>
+              <div class="card">
+                <img src="assets/images/icon-advanced.svg" alt="" />
+                <h3>Advanced</h3>
+                <p>$12/mo</p>
+              </div>
+              <div class="card">
+                <img src="assets/images/icon-pro.svg" alt="" />
+                <h3>pro</h3>
+                <p>$15/mo</p>
+              </div>
             </div>
-
-            <form action="post" id="form-one">
-              <label for="name">name</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="e.g. Stephen King"
-                required
-              />
-              <label for="email">email address</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="e.g. stephenking@lorem.com"
-                required
-              />
-              <label for="number">phone number</label>
-              <input
-                type="number"
-                name="number"
-                id="number"
-                placeholder="e.g. +1 234 567 890"
-                required
-              />
-            </form>
-
-            <div class="button-box" style="justify-content: flex-end">
-              <button class="button" type="submit" onclick="showNextPage()">
-                Next Step
-              </button>
+            <div class="switch-box">
+              <h3 class="active">Monthly</h3>
+              <div class="toggle-box">
+                <div class="circle"></div>
+              </div>
+              <h3>Yearly</h3>
             </div>
           </div>
 
-          <!-- ===== Step-Two -->
-          <div class="form-box-container" style="display: none">
-            <div class="title" id="title-two">
-              <h1>Select your plan</h1>
-              <p>You have the option of monthly or yearly billing.</p>
-            </div>
+          <div class="button-box">
+            <span onclick="showPrevPage()">Go Back</span>
+            <button class="button" type="submit" onclick="showNextPage()">
+              Next Step
+            </button>
+          </div>
+        </div>
 
-            <div class="form-two-box" id="form-two">
-              <div class="cards">
-                <div class="card active">
-                  <img src="assets/images/icon-arcade.svg" alt="" />
-                  <h3>Arcade</h3>
-                  <p>$9/mo</p>
-                </div>
-                <div class="card">
-                  <img src="assets/images/icon-advanced.svg" alt="" />
-                  <h3>Advanced</h3>
-                  <p>$12/mo</p>
-                </div>
-                <div class="card">
-                  <img src="assets/images/icon-pro.svg" alt="" />
-                  <h3>pro</h3>
-                  <p>$15/mo</p>
-                </div>
-              </div>
-              <div class="switch-box">
-                <h3 class="active">Monthly</h3>
-                <div class="toggle-box">
-                  <div class="circle"></div>
-                </div>
-                <h3>Yearly</h3>
-              </div>
-            </div>
+        <!-- ===== Step-Three -->
+        <div class="form-box-container" style="display: none">
+          <div class="title" id="title-three-1">
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+          </div>
 
-            <div class="button-box">
-              <span onclick="showPrevPage()">Go Back</span>
-              <button class="button" type="submit" onclick="showNextPage()">
-                Next Step
-              </button>
+          <div class="form-three-box" id="form-three">
+            <div class="cards">
+              <div class="card">
+                <input type="checkbox" name="checkbox1" id="checkbox1" />
+                <div class="info">
+                  <h3>Online service</h3>
+                  <p>Access to multiplayer games</p>
+                </div>
+                <span class="price">+$1/mo</span>
+              </div>
+              <div class="card">
+                <input type="checkbox" name="checkbox2" id="checkbox2" />
+                <div class="info">
+                  <h3>Larger storage</h3>
+                  <p>Extra 1TB of cloud save</p>
+                </div>
+                <span class="price">+$2/mo</span>
+              </div>
+              <div class="card">
+                <input type="checkbox" name="checkbox3" id="checkbox3" />
+                <div class="info">
+                  <h3>Customizable Profile</h3>
+                  <p>Custom theme on your profile</p>
+                </div>
+                <span class="price">+$2/mo</span>
+              </div>
             </div>
           </div>
 
-          <!-- ===== Step-Three -->
-          <div class="form-box-container" style="display: none">
-            <div class="title" id="title-three-1">
-              <h1>Pick add-ons</h1>
-              <p>Add-ons help enhance your gaming experience.</p>
-            </div>
+          <div class="button-box">
+            <span onclick="showPrevPage()">Go Back</span>
+            <button class="button" type="submit" onclick="showNextPage()">
+              Next Step
+            </button>
+          </div>
+        </div>
 
-            <div class="form-three-box" id="form-three">
-              <div class="cards">
-                <div class="card">
-                  <input type="checkbox" name="checkbox1" id="checkbox1" />
+        <!-- ===== Step-Four -->
+        <div class="form-box-container" style="display: none">
+          <div class="title" id="title-three-2">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
+          </div>
+
+          <div class="form-four-box" id="form-four">
+            <div class="cards">
+              <div class="card">
+                <div class="card-in">
                   <div class="info">
-                    <h3>Online service</h3>
-                    <p>Access to multiplayer games</p>
+                    <h3>Arcade (Monthly)</h3>
+                    <a>Change</a>
                   </div>
-                  <span class="price">+$1/mo</span>
+                  <span class="price">$9/mo</span>
                 </div>
-                <div class="card">
-                  <input type="checkbox" name="checkbox2" id="checkbox2" />
-                  <div class="info">
-                    <h3>Larger storage</h3>
-                    <p>Extra 1TB of cloud save</p>
-                  </div>
-                  <span class="price">+$2/mo</span>
+              </div>
+              <div class="card">
+                <div class="info p-infos">
+                  <p>Online service</p>
+                  <p>Larger storage</p>
                 </div>
-                <div class="card">
-                  <input type="checkbox" name="checkbox3" id="checkbox3" />
-                  <div class="info">
-                    <h3>Customizable Profile</h3>
-                    <p>Custom theme on your profile</p>
-                  </div>
-                  <span class="price">+$2/mo</span>
+                <div class="info price-info">
+                  <h3>+$1/mo</h3>
+                  <h3>+$1/mo</h3>
                 </div>
               </div>
             </div>
-
-            <div class="button-box">
-              <span onclick="showPrevPage()">Go Back</span>
-              <button class="button" type="submit" onclick="showNextPage()">
-                Next Step
-              </button>
+            <div class="total">
+              <h3>Total (per month)</h3>
+              <h2>+$12/mo</h2>
             </div>
           </div>
 
-          <!-- ===== Step-Four -->
-          <div class="form-box-container" style="display: none">
-            <div class="title" id="title-three-2">
-              <h1>Finishing up</h1>
-              <p>Double-check everything looks OK before confirming.</p>
-            </div>
-
-            <div class="form-four-box" id="form-four">
-              <div class="cards">
-                <div class="card">
-                  <div class="card-in">
-                    <div class="info">
-                      <h3>Arcade (Monthly)</h3>
-                      <a>Change</a>
-                    </div>
-                    <span class="price">$9/mo</span>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="info p-infos">
-                    <p>Online service</p>
-                    <p>Larger storage</p>
-                  </div>
-                  <div class="info price-info">
-                    <h3>+$1/mo</h3>
-                    <h3>+$1/mo</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="total">
-                <h3>Total (per month)</h3>
-                <h2>+$12/mo</h2>
-              </div>
-            </div>
-
-            <div class="button-box">
-              <span onclick="showPrevPage()">Go Back</span>
-              <button class="button" type="submit" onclick="(end())">
-                Confirm
-              </button>
-            </div>
+          <div class="button-box">
+            <span onclick="showPrevPage()">Go Back</span>
+            <button class="button" type="submit" onclick="(end())">
+              Confirm
+            </button>
           </div>
+        </div>
 
-          <!-- ===== Thanks-box -->
-          <div class="thank-box" style="display: none">
-            <img src="assets/images/icon-thank-you.svg" alt="" />
-            <h2>Thank you!</h2>
-            <p>
-              Thanks for confirming your subscription! We hope you have fun using
-              our platform. If you ever need support, please feel free to email us
-              at support@loremgaming.com.
-            </p>
-          </div>
+        <!-- ===== Thanks-box -->
+        <div class="thank-box" style="display: none">
+          <img src="assets/images/icon-thank-you.svg" alt="" />
+          <h2>Thank you!</h2>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to email us
+            at support@loremgaming.com.
+          </p>
         </div>
       </main>
     </div>
